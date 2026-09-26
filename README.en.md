@@ -1,10 +1,17 @@
 # pi-event-memory (for every love)
 
-A standard **pi package** that adds **workspace event memory (event_memory)** and **workspace page management** to the [pi coding agent](https://github.com/badlogic/pi-mono). The memory system is entirely code-managed (inverted index + lossless original-text storage + tiered fallback retrieval); the model only holds tool-trigger rights.
+A standard **pi package** that adds **workspace event memory (event_memory)** and **workspace page management** to the [pi coding agent](https://github.com/badlogic/pi-mono).
 
 [中文](README.md) | English
 
-> Event texts are stored **losslessly in their original language** — the memory works with any language, not just Chinese.
+## Highlights
+
+- **Memory is code-managed**: retrieval, mounting, truncation, dedup and archiving are all enforced in code — the model only presses tool buttons and never touches its own context
+- **Lossless originals**: events are stored verbatim, in any language; hits mount the full original text, not a summary
+- **Reliable dedup**: blake2b content addressing merges duplicate writes automatically; a misfire costs at most one extra event
+- **Tiered fallback retrieval**: keyword miss falls back to a time-coordinate list — prefer a miss over a wrong hit
+- **Auto-archiving**: original text is archived before context compaction, so folded turns are always recoverable
+- **Pages hard-limited to workspace**: create/delete only inside `pages/`, path traversal rejected outright
 
 ## Package layout (the repo *is* the package)
 
