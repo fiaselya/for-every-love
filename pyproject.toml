@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "event_memory"
+version = "0.1.0"
+description = "AI agent 的事件记忆系统"
+requires-python = ">=3.13"
+dependencies = ["httpx"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["event_memory*"]

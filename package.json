@@ -1,0 +1,21 @@
+{
+  "name": "pi-event-memory",
+  "version": "0.1.0",
+  "description": "for-every-love：pi agent 的工作区事件记忆（event_memory）+ 工作区页面管理插件",
+  "license": "MIT",
+  "keywords": ["pi-package"],
+  "type": "module",
+  "pi": {
+    "extensions": ["extensions/*.ts"]
+  },
+  "files": [
+    "extensions",
+    "agent/server.py",
+    "event_memory",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@sinclair/typebox": "*"
+  }
+}

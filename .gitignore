@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.pytest_tmp/
+*.egg-info/
+.tmproot/
+
+# 运行时产物（记忆与页面是本地个人数据，不入库）
+agent/workspace/
+
+# 本机模型配置（各人自己的端点）
+llm_config.json
+
+# 系统
+.DS_Store
